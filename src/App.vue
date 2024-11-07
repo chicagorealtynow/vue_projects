@@ -63,6 +63,9 @@
 <script setup>
 // Optional: Import FontAwesome here if it’s not globally included in your project.
 // import '@fortawesome/fontawesome-free/css/all.css';
+const toggleMenu = () => {
+  document.querySelector('.navbar').classList.toggle('open');
+}
 </script>
 
 <style>
