@@ -1,10 +1,10 @@
 <template>
   <div>
-    <nav class="navbar">
+    <nav class="navbar" :class="{ open: isMenuOpen }">
       <div class="logo">
         <img src="https://i.ibb.co/1zNvwsY/business-logo2.jpg" alt="Business Logo" style="max-width: 70%; height: auto;">
       </div>
-      <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+      <button class="menu-toggle" aria-label="Toggle Menu" @click="toggleMenu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="#" class="default-active">Home</a></li>
         <li><a href="#">Services</a></li>
@@ -61,11 +61,13 @@
 </template>
 
 <script setup>
-// Optional: Import FontAwesome here if it’s not globally included in your project.
-// import '@fortawesome/fontawesome-free/css/all.css';
+import { ref } from 'vue';
+
+const isMenuOpen = ref(false);
+
 const toggleMenu = () => {
-  document.querySelector('.navbar').classList.toggle('open');
-}
+  isMenuOpen.value = !isMenuOpen.value;
+};
 </script>
 
 <style>
@@ -86,7 +88,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
-  background-color: #000;
+  background-color: #000; /* Ensures persistent black background */
   color: white;
   font-size: 1.75rem;
   position: relative;
@@ -144,7 +146,7 @@ body {
   justify-content: center;
   padding: 54px;
   color: #ccc;
-  background-color: #000;
+  background-color: #000; /* Ensures persistent black background */
 }
 
 .content-left {
