@@ -4,6 +4,7 @@
       <div class="logo">
         <img src="https://i.ibb.co/1zNvwsY/business-logo2.jpg" alt="Business Logo" style="max-width: 70%; height: auto;">
       </div>
+      <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="#" class="default-active">Home</a></li>
         <li><a href="#">Services</a></li>
@@ -85,11 +86,21 @@ body {
   background-color: #000;
   color: white;
   font-size: 1.75rem;
+  position: relative;
 }
 
 .logo {
   font-size: 1.5rem;
   color: #f74d4d;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .nav-links {
@@ -201,9 +212,6 @@ body {
   background-color: #333;
   padding: 20px 0;
   color: #ccc;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
 
 .info-box {
@@ -220,60 +228,7 @@ body {
   color: #ccc;
 }
 
-@keyframes shine {
-  0%, 100% {
-    box-shadow: 0px 0px 10px rgba(255, 165, 0, 0);
-  }
-  50% {
-    box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.8);
-  }
-}
-
-.main-section {
-  animation: shine 2s ease-in-out infinite;
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.content-left {
-  animation: fadeInLeft 2s ease-in-out forwards;
-}
-
-.content-right {
-  animation: fadeInRight 2s ease-in-out forwards;
-}
-
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    padding: 30px;
+  .navbar {
+    flex-wrap: wrap;
   }
-  .content-left {
-    max-width: 100%;
-    text-align: center;
-  }
-  .profile-image {
-    width: 200px;
-  }
-}
-</style>
