@@ -232,3 +232,35 @@ body {
   .navbar {
     flex-wrap: wrap;
   }
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .navbar.open .nav-links {
+    display: flex;
+  }
+  .hero {
+    flex-direction: column;
+    padding: 30px;
+  }
+  .content-left {
+    max-width: 100%;
+    text-align: center;
+  }
+  .profile-image {
+    width: 200px;
+  }
+  .info-section {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+  }
+}
+</style>
